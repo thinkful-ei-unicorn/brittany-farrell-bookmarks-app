@@ -1,0 +1,230 @@
+<!-- tests out my styles for everything -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet"
+    type="text/css" />
+    <link rel="stylesheet" href="bookmark.css">
+</head>
+<body>
+
+    <header>
+        <!-- main header/always visible -->
+        <h1>My Bookmarks WireFrame</h1>
+
+        <!-- The 'fiter' and 'add bookmark' buttons -->
+        <button>+ New <img class="icon" src="./images/bookmark-icon.png" alt="icon"></button>
+        <button>Filter By <img class="icon" src="./images/dropdown-icon.png" alt="icon"></button>
+    </header>
+
+    <main>
+        
+        <!-- add bookmark form view -->
+        <form>
+            <h1>My WireFrame</h1>
+
+            <div class="linkInput">
+                <label for="link">Add New Bookmark:</label>
+                <input type="text" id="link" name="link" placeholder="www.bookmark.com" required>
+            </div>
+
+            <div class="details">
+                <h3 class="formTitle">Link Walkthrough</h3>
+    
+                <div class="options">
+                    <div class="submitRating">
+                        <label for="rating"><img src="./images/full-star.png" alt="star" class="ratingImage"></label>
+                        <input type="radio" name="rating" id="rating" value="one">
+                    </div>
+                    <div class="submitRating">
+                        <label for="rating"><img src="./images/full-star.png" alt="star" class="ratingImage"></label>
+                        <input type="radio" name="rating" id="rating" value="two">
+                    </div>
+                    <div class="submitRating">
+                        <label for="rating"><img src="./images/full-star.png" alt="star" class="ratingImage"></label>
+                        <input type="radio" name="rating" id="rating" value="three">
+                    </div>
+                    <div class="submitRating">
+                        <label for="rating"><img src="./images/full-star.png" alt="star" class="ratingImage"></label>
+                        <input type="radio" name="rating" id="rating" value="four" required>
+                    </div>
+                    <div class="submitRating">
+                        <label for="rating"><img src="./images/full-star.png" alt="star" class="ratingImage"></label>
+                        <input type="radio" name="rating" id="rating" value="five">
+                    </div>
+                </div>
+    
+                <textarea width="100%" rows="10" placeholder="Meh taxidermy tumblr pinterest gluten-free semiotics."></textarea>
+            </div>
+
+            <div class="formButtons">
+                <button>Cancel</button>
+                <button>Create</button>
+            </div>
+        </form>
+
+
+        <!-- collapsed view -->
+       <section class="bookmark">
+           <div class="itemHeader">
+               <h2>Title 1</h2>
+               <div class="rating">
+                   <img src="./images/full-star.png" alt="full star" class="ratingImage">
+                   <img src="./images/full-star.png" alt="full star" class="ratingImage">
+                   <img src="./images/full-star.png" alt="full star" class="ratingImage">
+                   <img src="./images/full-star.png" alt="full star" class="ratingImage">
+                   <img src="./images/empty-star.png" alt="empty star" class="ratingImage">
+                </div>
+           </div>
+       </section>
+
+       <section class="bookmark">
+        <div class="itemHeader">
+            <h2>Title 1</h2>
+            <div class="rating">
+                <img src="./images/full-star.png" alt="full star" class="ratingImage">
+                <img src="./images/full-star.png" alt="full star" class="ratingImage">
+                <img src="./images/full-star.png" alt="full star" class="ratingImage">
+                <img src="./images/empty-star.png" alt="full star" class="ratingImage">
+                <img src="./images/empty-star.png" alt="empty star" class="ratingImage">
+             </div>
+        </div>
+    </section>
+
+    <section class="bookmark">
+        <div class="itemHeader">
+            <h2>Title 8</h2>
+            <div class="rating">
+                <img src="./images/full-star.png" alt="full star" class="ratingImage">
+                <img src="./images/full-star.png" alt="full star" class="ratingImage">
+                <img src="./images/full-star.png" alt="full star" class="ratingImage">
+                <img src="./images/full-star.png" alt="full star" class="ratingImage">
+                <img src="./images/empty-star.png" alt="empty star" class="ratingImage">
+             </div>
+        </div>
+    </section>
+
+    <section class="bookmark">
+        <div class="itemHeader">
+            <h2>Title 2</h2>
+            <div class="rating">
+                <img src="./images/full-star.png" alt="full star" class="ratingImage">
+                <img src="./images/full-star.png" alt="full star" class="ratingImage">
+                <img src="./images/full-star.png" alt="full star" class="ratingImage">
+                <img src="./images/empty-star.png" alt="full star" class="ratingImage">
+                <img src="./images/empty-star.png" alt="empty star" class="ratingImage">
+             </div>
+        </div>
+    </section>
+
+    <section class="bookmark">
+        <div class="itemHeader">
+            <h2>Title 7</h2>
+            <div class="rating">
+                <img src="./images/full-star.png" alt="full star" class="ratingImage">
+                <img src="./images/full-star.png" alt="full star" class="ratingImage">
+                <img src="./images/empty-star.png" alt="full star" class="ratingImage">
+                <img src="./images/empty-star.png" alt="full star" class="ratingImage">
+                <img src="./images/empty-star.png" alt="empty star" class="ratingImage">
+             </div>
+        </div>
+    </section>
+
+    <!-- expanded view -->
+    <section class="bookmark">
+        <div class="itemHeader">
+            <h2>Title 3</h2>
+            <div class="rating">
+                <img src="./images/full-star.png" alt="full star" class="ratingImage">
+                <img src="./images/full-star.png" alt="full star" class="ratingImage">
+                <img src="./images/full-star.png" alt="full star" class="ratingImage">
+                <img src="./images/full-star.png" alt="full star" class="ratingImage">
+                <img src="./images/full-star.png" alt="empty star" class="ratingImage">
+             </div>
+        </div>
+        <div class="itemBody">
+            <div class="bookmarkButtons">
+                <button id="link" type="submit">View Website</button>
+                <button id="delete" type="submit"><img src="images/trash-icon.png" alt="delete" class="delete"></button>
+            </div>
+            <p class="description">
+                I'm baby blog before they sold out truffaut umami activated charcoal palo santo chartreuse tattooed aesthetic coloring book vinyl pinterest. Selvage polaroid sustainable yr. Pug yr raw denim skateboard shabby chic health goth keytar, etsy intelligentsia bushwick lyft marfa asymmetrical 90's adaptogen. Iceland lumbersexual mustache chartreuse, pok pok normcore enamel pin knausgaard direct trade. Pickled typewriter locavore bushwick tilde.
+            </p>
+        </div>
+    </section>
+
+    <section class="bookmark">
+        <div class="itemHeader">
+            <h2>Title 15</h2>
+            <div class="rating">
+                <img src="./images/full-star.png" alt="full star" class="ratingImage">
+                <img src="./images/full-star.png" alt="full star" class="ratingImage">
+                <img src="./images/full-star.png" alt="full star" class="ratingImage">
+                <img src="./images/empty-star.png" alt="full star" class="ratingImage">
+                <img src="./images/empty-star.png" alt="empty star" class="ratingImage">
+             </div>
+        </div>
+    </section>
+
+    <section class="bookmark">
+        <div class="itemHeader">
+            <h2>Title 12</h2>
+            <div class="rating">
+                <img src="./images/full-star.png" alt="full star" class="ratingImage">
+                <img src="./images/full-star.png" alt="full star" class="ratingImage">
+                <img src="./images/full-star.png" alt="full star" class="ratingImage">
+                <img src="./images/full-star.png" alt="full star" class="ratingImage">
+                <img src="./images/full-star.png" alt="empty star" class="ratingImage">
+             </div>
+        </div>
+    </section>
+
+    <section class="bookmark">
+        <div class="itemHeader">
+            <h2>Title 11</h2>
+            <div class="rating">
+                <img src="./images/full-star.png" alt="full star" class="ratingImage">
+                <img src="./images/full-star.png" alt="full star" class="ratingImage">
+                <img src="./images/empty-star.png" alt="full star" class="ratingImage">
+                <img src="./images/empty-star.png" alt="full star" class="ratingImage">
+                <img src="./images/empty-star.png" alt="empty star" class="ratingImage">
+             </div>
+        </div>
+    </section>
+
+
+    </main>
+   
+</body>
+</html>
+
+<!-- /* Example store:
+
+const store = {
+    bookmarks: [
+      {
+        id: 'x56w',
+        title: 'Title 1',
+        rating: 3,
+        url: 'http://www.title1.com',
+        description: 'lorem ipsum dolor sit',
+        expanded: false
+      },
+    ]
+    adding: false,
+    error: null,
+    filter: 0
+}
+
+*/ -->
+
+
+
+
+
+
+

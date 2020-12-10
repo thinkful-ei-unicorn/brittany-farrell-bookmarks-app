@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    padding: 5px;
+}
+
+h1 {
+    text-align: center;
+}
+
+h3 {
+    font-size: 18px;
+    border-bottom: black solid 1px;
+    padding: 5px 10px;
+    margin: 5px 0;
+
+}
+
+.submitRating {
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 5px;
+}
+
+.details {
+    border: black solid 2px;
+    margin: 15px 0;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+textarea {
+    display: block;
+    margin: 5px auto 15px auto;
+}
+
+#link {
+    width: 100%;
+}
+
+.linkInput input {
+   height: 25px; 
+}
+
+.options {
+    display: flex;
+    justify-content: center;
+}
+
+.submitRating input {
+    width: 22px;
+}
+
+.icon {
+    height: 10px;
+}
+
+.ratingImage {
+    height: 20px;
+    margin: 1px;
+}
+
+.rating {
+    display: flex;
+}
+
+.bookmark {
+    border: black solid 2px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+.bookmarkButtons, .formButtons {
+    display: flex;
+    margin: 5px;
+    justify-content: space-between;
+}
+
+.itemHeader {
+    display: flex;
+    justify-content: space-between;
+    background-color: gray;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.itemBody {
+    border-top: black solid 1px;
+}
+
+.delete {
+    height: 14px;
+}
+
+.description {
+    font-size: 14px;
+    padding: 5px;
+}
+
+button, #js-create {
+    padding: 3px 15px;
+    margin: 5px;
+}
+
+form {
+    border: black solid 2px;
+    padding: 10px;
+    margin: 10px 10px 15px 10px;
+}
+
+#title {
+    width: 171px;
+    margin-bottom: 5px;
+}
+
+.filterOption {
+    display: flex;
+}
