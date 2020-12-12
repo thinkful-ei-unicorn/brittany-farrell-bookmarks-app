@@ -36,46 +36,48 @@ export function generateHeader() {
 
 export function generateForm() {
     return `
-    <form id="add-created-bookmark">
-        <h1>My Bookmarks</h1>
-
-        <div class="linkInput">
-            <label for="link">Add New Bookmark:</label>
-            <input type="text" id="link" name="link" placeholder="http://www.bookmark.com">
-        </div>
-
-        <div class="details">
-            <input type="text" id="title" name="title" placeholder="Enter bookmark title" required>
-
-            <div class="options">
-                <div class="submitRating">
-                    <label for="rating"><img src="./images/full-star.png" alt="star" class="ratingImage"></label>
-                    <input type="radio" name="rating" id="rating" value="one">
-                </div>
-                <div class="submitRating">
-                    <label for="rating"><img src="./images/full-star.png" alt="star" class="ratingImage"></label>
-                    <input type="radio" name="rating" id="rating" value="two">
-                </div>
-                <div class="submitRating">
-                    <label for="rating"><img src="./images/full-star.png" alt="star" class="ratingImage"></label>
-                    <input type="radio" name="rating" id="rating" value="three">
-                </div>
-                <div class="submitRating">
-                    <label for="rating"><img src="./images/full-star.png" alt="star" class="ratingImage"></label>
-                    <input type="radio" name="rating" id="rating" value="four" required>
-                </div>
-                <div class="submitRating">
-                    <label for="rating"><img src="./images/full-star.png" alt="star" class="ratingImage"></label>
-                    <input type="radio" name="rating" id="rating" value="five">
-                </div>
+    <form id="add-created-bookmark" class="preventBreak">
+        <div  class="form">
+            <h1>My Bookmarks</h1>
+    
+            <div class="linkInput">
+                <label for="link">Add New Bookmark:</label>
+                <input type="text" id="link" name="link" placeholder="http://www.bookmark.com">
             </div>
-
-            <textarea id="text-desc" width="100%" rows="10" placeholder="Meh taxidermy tumblr pinterest gluten-free semiotics."></textarea>
-        </div>
-
-        <div class="formButtons">
-            <button type="button" id="js-cancel">Cancel</button>
-            <input type="submit" id="js-create" value="Create">
+    
+            <div class="details">
+                <input type="text" id="title" name="title" placeholder="Enter bookmark title" required>
+    
+                <div class="options">
+                    <div class="submitRating">
+                        <label for="rating"><img src="./images/full-star.png" alt="star" class="ratingImage"></label>
+                        <input type="radio" name="rating" id="rating" value="one">
+                    </div>
+                    <div class="submitRating">
+                        <label for="rating"><img src="./images/full-star.png" alt="star" class="ratingImage"></label>
+                        <input type="radio" name="rating" id="rating" value="two">
+                    </div>
+                    <div class="submitRating">
+                        <label for="rating"><img src="./images/full-star.png" alt="star" class="ratingImage"></label>
+                        <input type="radio" name="rating" id="rating" value="three">
+                    </div>
+                    <div class="submitRating">
+                        <label for="rating"><img src="./images/full-star.png" alt="star" class="ratingImage"></label>
+                        <input type="radio" name="rating" id="rating" value="four" required>
+                    </div>
+                    <div class="submitRating">
+                        <label for="rating"><img src="./images/full-star.png" alt="star" class="ratingImage"></label>
+                        <input type="radio" name="rating" id="rating" value="five">
+                    </div>
+                </div>
+    
+                <textarea id="text-desc" width="100%" rows="10" placeholder="Meh taxidermy tumblr pinterest gluten-free semiotics."></textarea>
+            </div>
+    
+            <div class="formButtons">
+                <button type="button" id="js-cancel">Cancel</button>
+                <input type="submit" id="js-create" value="Create">
+            </div>
         </div>
     </form>`;
 }
@@ -111,37 +113,39 @@ one = two = three = four = five = ''
 
 function generateCollapsedBookmark(obj) { 
     return `
-    <section class="bookmark">
-        <div class="js-item-header itemHeader" id="${obj.id}">
-            <h2>${obj.title}</h2>
-            <div class="rating">
-                ${generateRating(obj.rating)}
+    <span>
+        <section class="bookmark">
+            <div class="js-item-header itemHeader" id="${obj.id}">
+                <h2>${obj.title}</h2>
+                <div class="rating">
+                    ${generateRating(obj.rating)}
+                </div>
             </div>
-        </div>
-    </section>`;
+        </section>
+    </span>`;
 }
 
 function generateExpandedBookmark(obj) {
 
     return `
-    <section class="bookmark">
-        <div class="js-item-header itemHeader" id="${obj.id}">
-            <h2>${obj.title}</h2>
-            <div class="rating">
-                ${generateRating(obj.rating)}
-             </div>
-        </div>
-        <div class="itemBody">
-            <div class="bookmarkButtons">
-                <a href="${obj.url}" target="_blank"><button id="link" type="submit">View Website</button></a>
-                <button class="js-delete" id="${obj.id}" type="submit"><img src="images/trash-icon.png" alt="delete" class="delete"></button>
+        <section class="bookmark">
+            <div class="js-item-header itemHeader" id="${obj.id}">
+                <h2>${obj.title}</h2>
+                <div class="rating">
+                    ${generateRating(obj.rating)}
+                 </div>
             </div>
-            <p class="description">
-            <h4>Description: </h4>
-                ${obj.desc}
-            </p>
-        </div>
-    </section>`;
+            <div class="itemBody">
+                <div class="bookmarkButtons">
+                    <a href="${obj.url}" target="_blank"><button id="link" type="submit">View Website</button></a>
+                    <button class="js-delete" id="${obj.id}" type="submit"><img src="images/trash-icon.png" alt="delete" class="delete"></button>
+                </div>
+                <p class="description">
+                <h4>Description: </h4>
+                    ${obj.desc}
+                </p>
+            </div>
+        </section>`;
 } 
 
 export function generateBookmarkList() {

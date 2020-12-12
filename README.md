@@ -2,6 +2,6 @@ Sorry I was so late in adding this and thank you for getting back to me so quick
 
 When you first open the app, you will see an "new" button, a "filter" button, and a list of condensed bookmarks (displaying only their titles and ratings). You can navigate the app using the tab and enter keys or just using your mouse. When you click on a bookmark's header, that bookmark will expand and display a description of the bookmark, a button that can open the website in a new tab, and a trash can icon that can delete the bookmark. When you click on the "New" button, an "add new bookmark" form will replace all other html in the DOM and and you can either click cancel (to return to the previous view) or input information for a new bookmark. Every bookmark has a title, a link, and a rating of 1 to 5 stars, most will have descriptions, but descriptions are not mandatory. If all information is entered correctly, clicking the "create" button will add your bookmark to the list of condensed bookmarks.
 
-The url link has to begin with "http(s)://" or an error will display on the screen and the form will not be submitted. If I click the filter button a dropdown menu will displays that will filter the bookmarks by rating.
+The url link has to begin with "http(s)://" or an error will display on the screen and the form will not be submitted. If you click the filter button a dropdown menu will display that can filter the bookmarks by rating.
 
 The live app: https://thinkful-ei-unicorn.github.io/brittany-farrell-bookmarks-app/

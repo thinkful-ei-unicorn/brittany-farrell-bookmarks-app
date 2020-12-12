@@ -8,7 +8,7 @@ import * as api from './api.js'
 
 let store = file.store
 
-export let filtering = false
+
 
 export function handleNewClick() {
     $('header').on('click', '#js-render-form', function(event) {
@@ -47,7 +47,7 @@ export function handleFilterClick() {
 
         let x = $(this).find('option:selected').val();
         store.filter = parseInt(x)
-        filtering = false
+        help.variables.filtering = false
 
         book.render();
     });

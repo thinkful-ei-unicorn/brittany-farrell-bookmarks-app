@@ -4,6 +4,7 @@ import * as gen from './generators.js'
 import * as event from './eventListeners.js'
 import * as file from './store.js'
 import * as api from './api.js'
+import * as help from './helperFunctions.js'
 
 let store = file.store
 
@@ -17,11 +18,11 @@ export function render() {
     if (file.store.adding) {
         HTML = gen.generateForm();
     } if (!file.store.adding) {
-        if (!event.filtering) {
+        if (!help.variables.filtering) {
             headerHTML = gen.generateHeader();
             HTML = gen.generateBookmarkList();
         }
-        if (event.filtering) {
+        if (help.variables.filtering) {
             headerHTML = gen.generateFilterForm();
             }
     }

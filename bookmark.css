@@ -71,6 +71,7 @@ textarea {
     border: black solid 2px;
     margin: 5px 0;
     border-radius: 5px;
+    -webkit-column-break-inside: avoid;
 }
 
 .bookmarkButtons, .formButtons {
@@ -109,12 +110,21 @@ button, #js-create, select {
     margin: 5px;
 }
 
+.preventBreak {
+    -webkit-column-break-inside: avoid;
 
+}
 
 #add-created-bookmark {
+    padding: 10px;
+    margin: 10px 10px 15px 10px;
+}
+
+.form {
     border: black solid 2px;
     padding: 10px;
     margin: 10px 10px 15px 10px;
+    max-width: 500px;
 }
 
 #title {
@@ -125,3 +135,60 @@ button, #js-create, select {
 .filterOption {
     display: flex;
 }
+
+@media (max-width: 799px) and (min-width: 400px) {
+    .bookmark {
+        width: 400px;
+    }
+
+    .form {
+        min-width: 400px;
+    }
+}
+
+@media (max-width: 1199px) and (min-width: 800px) {
+    .bookmark {
+        width: 400px;
+    }
+
+    #js-main-content {
+        column-count: 2;
+    }
+
+    .form {
+        min-width: 400px;
+    }
+}
+
+@media (max-width: 1599px) and (min-width: 1200px) {
+    .bookmark {
+        width: 400px;
+    }
+
+    #js-main-content {
+        column-count: 3;
+    }
+    
+    .form {
+        min-width: 400px;
+    }
+}
+
+@media (max-width: 2000px) and (min-width: 1600px) {
+    .bookmark {
+        width: 400px;
+    }
+
+    #js-main-content {
+        column-count: 4;
+    }
+
+    .form {
+        min-width: 400px;
+    }
+}
+
+/* center buttons in the desktop view and add padding to the bookmarks in desktop.
+
+try creating columns to stack the bookmarks and keep them dynamic.make the header bigger and change the background color to something more bookish. maybe yellow or beige. add margin to the description of the bookmarks and center the link and header buttons for the mobile first design. Set the fonts so that the mobile first fonts are bigger, but the desktop view fonts are prettier. then focus on a11y best practices. */
+

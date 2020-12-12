@@ -2,7 +2,10 @@
 import * as file from './store.js'
 import * as book from './bookmark.js'
 
-export const baseUrl = `https://thinkful-list-api.herokuapp.com/brittanyfarrell/bookmarks`;
+export const variables = {
+    baseUrl: `https://thinkful-list-api.herokuapp.com/brittanyfarrell/bookmarks`,
+    filtering: false
+}
 
 export function findApiRating(rate) {
     switch(rate) {

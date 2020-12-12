@@ -2,7 +2,7 @@ import * as help from './helperFunctions.js'
 import * as file from './store.js'
 import * as book from './bookmark.js'
 
-let baseUrl = help.baseUrl
+let baseUrl = help.variables.baseUrl
 
 export function generateStore() {
     fetch(baseUrl)
