@@ -188,7 +188,4 @@ button, #js-create, select {
     }
 }
 
-/* center buttons in the desktop view and add padding to the bookmarks in desktop.
-
-try creating columns to stack the bookmarks and keep them dynamic.make the header bigger and change the background color to something more bookish. maybe yellow or beige. add margin to the description of the bookmarks and center the link and header buttons for the mobile first design. Set the fonts so that the mobile first fonts are bigger, but the desktop view fonts are prettier. then focus on a11y best practices. */
 
