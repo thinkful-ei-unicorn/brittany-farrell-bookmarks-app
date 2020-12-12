@@ -2,13 +2,18 @@
 /* eslint-disable strict */
 import * as gen from './generators.js'
 import * as book from './bookmark.js'
+import * as file from './store.js'
+import * as help from './helperFunctions.js'
+import * as api from './api.js'
+
+let store = file.store
 
 export let filtering = false
 
 export function handleNewClick() {
     $('header').on('click', '#js-render-form', function(event) {
         event.preventDefault();
-        gen.store.adding = true;
+        store.adding = true;
         book.render();
     });
 }
@@ -16,26 +21,11 @@ export function handleNewClick() {
 export function handleCancelClick() {
     $('main').on('click', '#js-cancel', function(event) {
         event.preventDefault();
-        console.log('cancel clicked')
-        gen.store.adding = false;
+        store.adding = false;
+        store.error = null
         book.render();
     });
 }
-
-function findApiRating(rate) {
-    switch(rate) {
-        case 'one':
-            return 1;
-        case 'two':
-            return 2;
-        case 'three':
-            return 3;
-        case 'four':
-            return 4;
-        case 'five':
-            return 5;
-    }
-};
 
 export function handleCreateClick() {
     $('main').on('submit', '#add-created-bookmark', function(event) {
@@ -44,80 +34,21 @@ export function handleCreateClick() {
         let title = $(this).find('#title').val();
         let url = $(this).find('#link').val();
         let rate = $(this).find('input:checked').val();
-        let rating = findApiRating(rate);
+        let rating = help.findApiRating(rate);
         let desc = $(this).find('#text-desc').val();
 
-        book.extendApi(title, url, rating, desc)
-
-        gen.store.adding = false;
+        api.extendApi(title, url, rating, desc)
     });
 }
 
 export function handleFilterClick() {
-    $('header').on('click', '#js-filter-list', function(event) {
+    $('header').on('change', '#js-filter-form', function(event) {
         event.preventDefault();
-        console.log('filter clicked')
-        filtering = true
-        book.render();
-    });
-}
 
-export function handleOneClick() {
-    $('header').on('click', '#js-one', function(event) {
-        event.preventDefault();
-      
-        gen.store.filter = 1;
+        let x = $(this).find('option:selected').val();
+        store.filter = parseInt(x)
         filtering = false
-        book.render();
-    });
-}
 
-export function handleTwoClick() {
-    $('header').on('click', '#js-two', function(event) {
-        event.preventDefault();
-     
-        gen.store.filter = 2;
-        filtering = false
-        book.render();
-    });
-}
-
-export function handleThreeClick() {
-    $('header').on('click', '#js-three', function(event) {
-        event.preventDefault();
-     
-        gen.store.filter = 3;
-        filtering = false
-        book.render();
-    });
-}
-
-export function handleFourClick() {
-    $('header').on('click', '#js-four', function(event) {
-        event.preventDefault();
-       
-        gen.store.filter = 4;
-        filtering = false
-        book.render();
-    });
-}
-
-export function handleFiveClick() {
-    $('header').on('click', '#js-five', function(event) {
-        event.preventDefault();
-       
-        gen.store.filter = 5;
-        filtering = false
-        book.render();
-    });
-}
-
-export function handleNoneClick() {
-    $('header').on('click', '#js-zero', function(event) {
-        event.preventDefault();
-       
-        gen.store.filter = 0;
-        filtering = false
         book.render();
     });
 }
@@ -128,7 +59,7 @@ export function handleHeaderClick() {
        console.log(this.id)
        let checkBy = this.id
 
-       gen.store.bookmarks.forEach(function(x) {
+       store.bookmarks.forEach(function(x) {
            if (checkBy === x.id) {
                x.expanded = !x.expanded
            }
@@ -142,7 +73,7 @@ export function handleDeleteClick() {
         event.preventDefault();
         let findBy = this.id
 
-        book.deleteBookmark(findBy)
+        api.deleteBookmark(findBy)
         
     });
 }

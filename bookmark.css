@@ -63,7 +63,7 @@ textarea {
     margin: 1px;
 }
 
-.rating {
+.rating, .flex {
     display: flex;
 }
 
@@ -91,6 +91,10 @@ textarea {
     border-top: black solid 1px;
 }
 
+.error{
+    color: red;
+}
+
 .delete {
     height: 14px;
 }
@@ -100,12 +104,14 @@ textarea {
     padding: 5px;
 }
 
-button, #js-create {
+button, #js-create, select {
     padding: 3px 15px;
     margin: 5px;
 }
 
-form {
+
+
+#add-created-bookmark {
     border: black solid 2px;
     padding: 10px;
     margin: 10px 10px 15px 10px;

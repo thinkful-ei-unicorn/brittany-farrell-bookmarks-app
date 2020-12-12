@@ -2,12 +2,8 @@
 /* eslint-disable strict */
 
 // store
-export let store = {
-    bookmarks: [],
-    adding: false,
-    error: null,
-    filter: 0
-  };
+import * as file from './store.js'
+let store = file.store
 
 
 // generator functions
@@ -15,9 +11,27 @@ export function generateHeader() {
     return `
             <h1>My Bookmarks</h1>
 
-            <button id="js-render-form" type="button">+  New <img class="icon" src="./images/bookmark-icon.png" alt="icon"></button>
-          
-            <button id="js-filter-list">Filter By <img class="icon" src="./images/dropdown-icon.png" alt="icon"></button>`;
+            <div class="flex">
+                <button id="js-render-form" type="button">+  New <img class="icon" src="./images/bookmark-icon.png" alt="icon"></button>
+              
+                <form action="" id="js-filter-form">
+                    <select>
+                        <option value="zero">filter</option>
+                        <option value="1">One Star
+                            <div class="filterStars">${generateRating(1)}</div>
+                        </option>
+                        <option  value="2">Two Stars
+                            <div class="filterStars">${generateRating(2)}</div></option>
+                        <option value="3">Three Stars
+                            <div class="filterStars">${generateRating(3)}</div></option>
+                        <option value="4">Four Stars
+                            <div class="filterStars">${generateRating(4)}</div></option>
+                        <option value="5">Five Stars
+                            <div class="filterStars">${generateRating(5)}</div></option>
+                    </select>
+                </form>
+            </div>`
+            ;
 }
 
 export function generateForm() {
@@ -27,7 +41,7 @@ export function generateForm() {
 
         <div class="linkInput">
             <label for="link">Add New Bookmark:</label>
-            <input type="text" id="link" name="link" placeholder="www.bookmark.com">
+            <input type="text" id="link" name="link" placeholder="http://www.bookmark.com">
         </div>
 
         <div class="details">
@@ -65,49 +79,8 @@ export function generateForm() {
         </div>
     </form>`;
 }
+                    
 
-export function generateFilterForm() {
-    return `
-    <h1>My Bookmarks</h1>
-        <div id="filter-form js-filter-form">
-        
-        <h2>Filter Bookmarks by Rating</h2>
-
-                <button type="button" id="js-zero">
-                    None
-                    <div class="filterStars"><img src="./images/empty-star.png" alt="full star" class="ratingImage">
-                    <img src="./images/empty-star.png" alt="full star" class="ratingImage">
-                    <img src="./images/empty-star.png" alt="full star" class="ratingImage">
-                    <img src="./images/empty-star.png" alt="full star" class="ratingImage">
-                    <img src="./images/empty-star.png" alt="empty star" class="ratingImage"></div>
-                </button>
-
-                <button type="button" id="js-one">
-                    One Star
-                    <div class="filterStars">${generateRating(1)}</div>
-                </button>
-
-                <button type="button" id="js-two">
-                    Two Stars
-                    <div class="filterStars">${generateRating(2)}</div>
-                </button>
-
-                <button type="button" id="js-three">
-                    Three Stars
-                    <div class="filterStars">${generateRating(3)}</div>
-                </button>
-
-                <button type="button" id="js-four">
-                    Four Stars
-                    <div class="filterStars">${generateRating(4)}</div>
-                </button>
-
-                <button type="button" id="js-five">
-                    Five Stars
-                    <div class="filterStars">${generateRating(5)}</div>
-                </button>
-        </div>`
-}
 
 function generateRating(rating) {
 let one, two, three, four, five;
@@ -172,9 +145,9 @@ function generateExpandedBookmark(obj) {
 } 
 
 export function generateBookmarkList() {
-    console.log(store.bookmarks)
-    let filtered = store.bookmarks.filter(function(x) {
-        if (x.rating >= store.filter) {
+    console.log(file.store.bookmarks)
+    let filtered = file.store.bookmarks.filter(function(x) {
+        if (x.rating >= file.store.filter) {
             return x
         }
     })
