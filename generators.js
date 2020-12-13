@@ -15,7 +15,8 @@ export function generateHeader() {
                 <button id="js-render-form" type="button">+  New <img class="icon" src="./images/bookmark-icon.png" alt="icon"></button>
               
                 <form action="" id="js-filter-form">
-                    <select>
+                    <label for="select">Filter</label>
+                    <select id="select">
                         <option value="zero">filter</option>
                         <option value="1">One Star
                             <div class="filterStars">${generateRating(1)}</div>
@@ -115,7 +116,7 @@ function generateCollapsedBookmark(obj) {
     return `
     <span>
         <section class="bookmark">
-            <div class="js-item-header itemHeader" id="${obj.id}">
+            <div tabindex="0" role="button" class="js-item-header itemHeader" id="${obj.id}">
                 <h2>${obj.title}</h2>
                 <div class="rating">
                     ${generateRating(obj.rating)}

@@ -1,0 +1,32 @@
+{
+  "name": "bookmark-project",
+  "version": "1.0.0",
+  "description": "A bookmark storage app",
+  "main": "api.js",
+  "dependencies": {
+    "jquery": "^3.5.1",
+    "package.json": "^2.0.1"
+  },
+  "devDependencies": {
+    "css-loader": "^5.0.1",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^4.5.0",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.10.1",
+    "webpack-cli": "^4.2.0",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thinkful-ei-unicorn/brittany-farrell-bookmarks-app.git"
+  },
+  "author": "Brittany Farrell",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thinkful-ei-unicorn/brittany-farrell-bookmarks-app/issues"
+  },
+  "homepage": "https://github.com/thinkful-ei-unicorn/brittany-farrell-bookmarks-app#readme"
+}

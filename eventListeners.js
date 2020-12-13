@@ -56,7 +56,7 @@ export function handleFilterClick() {
 export function handleHeaderClick() {
     $('main').on('click', '.js-item-header', function(event) {
         event.preventDefault();
-       console.log(this.id)
+       console.log(this)
        let checkBy = this.id
 
        store.bookmarks.forEach(function(x) {
@@ -65,6 +65,23 @@ export function handleHeaderClick() {
            }
        })
         book.render();
+    });
+}
+
+export function handleHeaderEnter() {
+    $('main').addEventListener('keypress', '.js-item-header', function(event) {
+        event.preventDefault();
+        if (e.key === 'Enter') {
+            console.log(this.id)
+            let checkBy = this.id
+
+            store.bookmarks.forEach(function(x) {
+                if (checkBy === x.id) {
+                    x.expanded = !x.expanded
+                }
+            })
+                book.render();
+        }
     });
 }
 
