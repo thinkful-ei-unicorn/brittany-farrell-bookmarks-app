@@ -136,56 +136,20 @@ button, #js-create, select {
     display: flex;
 }
 
-@media (max-width: 799px) and (min-width: 400px) {
+@media screen and (min-width: 400px) {
     .bookmark {
         width: 400px;
     }
 
     .form {
         min-width: 400px;
-    }
-}
-
-@media (max-width: 1199px) and (min-width: 800px) {
-    .bookmark {
-        width: 400px;
     }
 
     #js-main-content {
-        column-count: 2;
-    }
-
-    .form {
-        min-width: 400px;
-    }
-}
-
-@media (max-width: 1599px) and (min-width: 1200px) {
-    .bookmark {
-        width: 400px;
-    }
-
-    #js-main-content {
-        column-count: 3;
-    }
-    
-    .form {
-        min-width: 400px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 410px);
+        grid-gap: 5px;
+        padding: 15px;
+        margin: 15px;
     }
 }
-
-@media (max-width: 2000px) and (min-width: 1600px) {
-    .bookmark {
-        width: 400px;
-    }
-
-    #js-main-content {
-        column-count: 4;
-    }
-
-    .form {
-        min-width: 400px;
-    }
-}
-
-
