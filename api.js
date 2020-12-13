@@ -1,6 +1,6 @@
 import * as help from './helperFunctions.js'
 import * as file from './store.js'
-import * as book from './bookmark.js'
+import * as book from './server.js'
 
 let baseUrl = help.variables.baseUrl
 

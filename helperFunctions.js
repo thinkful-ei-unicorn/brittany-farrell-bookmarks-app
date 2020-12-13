@@ -1,6 +1,6 @@
 
 import * as file from './store.js'
-import * as book from './bookmark.js'
+import * as book from './server.js'
 
 export const variables = {
     baseUrl: `https://thinkful-list-api.herokuapp.com/brittanyfarrell/bookmarks`,

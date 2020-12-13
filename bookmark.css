@@ -86,6 +86,8 @@ textarea {
     background-color: gray;
     padding: 5px;
     border-radius: 3px;
+    margin: 0;
+    width: 100%;
 }
 
 .itemBody {

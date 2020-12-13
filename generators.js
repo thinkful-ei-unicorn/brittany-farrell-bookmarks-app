@@ -116,12 +116,12 @@ function generateCollapsedBookmark(obj) {
     return `
     <span>
         <section class="bookmark">
-            <div tabindex="0" role="button" class="js-item-header itemHeader" id="${obj.id}">
+            <button tabindex="0" role="button" class="js-item-header itemHeader" id="${obj.id}">
                 <h2>${obj.title}</h2>
                 <div class="rating">
                     ${generateRating(obj.rating)}
                 </div>
-            </div>
+            </button    >
         </section>
     </span>`;
 }
@@ -130,12 +130,12 @@ function generateExpandedBookmark(obj) {
 
     return `
         <section class="bookmark">
-            <div class="js-item-header itemHeader" id="${obj.id}">
+            <button class="js-item-header itemHeader" id="${obj.id}">
                 <h2>${obj.title}</h2>
                 <div class="rating">
                     ${generateRating(obj.rating)}
                  </div>
-            </div>
+            </button>
             <div class="itemBody">
                 <div class="bookmarkButtons">
                     <a href="${obj.url}" target="_blank"><button id="link" type="submit">View Website</button></a>
