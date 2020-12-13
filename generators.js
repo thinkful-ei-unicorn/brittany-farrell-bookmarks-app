@@ -15,9 +15,9 @@ export function generateHeader() {
                 <button id="js-render-form" type="button">+  New <img class="icon" src="./images/bookmark-icon.png" alt="icon"></button>
               
                 <form action="" id="js-filter-form">
-                    <label for="select">Filter</label>
+                    <label for="select">Filter by:</label>
                     <select id="select">
-                        <option value="zero">filter</option>
+                        <option value="zero">Rating</option>
                         <option value="1">One Star
                             <div class="filterStars">${generateRating(1)}</div>
                         </option>
